@@ -60,29 +60,58 @@ In-depth analysis of the **convergence properties of the Steepest Descent method
 
 ---
 
-### 🧬 **Project 4 – Genetic Algorithms (Final Project)**  
-The final project focused on **evolutionary optimization techniques**, specifically the design and implementation of a **Genetic Algorithm (GA)** to solve challenging optimization problems.  
+### 🧬 **Project 4 – Genetic Algorithms (Traffic Network Optimization)**  
 
-- **Problem Definition**: Apply GA to a non-trivial optimization problem (function minimization or classification), where classical deterministic methods may fail due to non-convexity or multiple local minima.  
-- **Chromosome Encoding**: Decide how solutions are represented (binary, real-valued, or custom structures depending on the problem).  
-- **Population Initialization**: Generate diverse initial candidate solutions to ensure sufficient exploration of the search space.  
+The final project applied **evolutionary optimization techniques** to a real-world inspired problem:  
+**minimizing total travel time in a congested traffic network.**  
+
+#### 🚦 Problem Description  
+- The network is modeled as a directed graph where **nodes** are intersections and **edges** are roads.  
+- Each road *i* has:  
+  - **Baseline travel time**: *ti* (minutes, under negligible traffic).  
+  - **Capacity**: *ci* (vehicles per minute, maximum flow).  
+  - **Flow variable**: *xi* (vehicles per minute using that road).  
+  - **Congestion factor**: *ai*, a constant depending on road type.  
+- The travel time function for road *i* is:  
+
+  \[
+  T_i(x_i) = t_i + \frac{a_i x_i}{1 - \frac{x_i}{c_i}} \quad [\text{minutes}]
+  \]
+
+- Properties:  
+  - As \(x_i \to 0\), \(T_i(x_i) \to t_i\) (light traffic = baseline time).  
+  - As \(x_i \to c_i\), \(T_i(x_i) \to +\infty\) (congestion → gridlock).  
+
+- **Constraints**:  
+  - The total incoming flow at each intersection equals the total outgoing flow (no accumulation or deficits).  
+  - The total input flow for the network is fixed at \(V = 100\) vehicles/minute.  
+
+- **Objective**:  
+  \[
+  \text{Minimize } T_{\text{total}} = \sum_{i=1}^n T_i(x_i)
+  \]  
+  subject to flow conservation and capacity constraints.  
+
+#### 📌 Tasks  
+- **Mathematical formulation** of the traffic optimization problem.  
+- **Chromosome representation** of road flows \((x_1, x_2, \dots, x_n)\).  
+- **Population initialization** ensuring feasibility (flows respect conservation laws and capacities).  
 - **Genetic Operators**:  
-  - **Selection** – Implement parent selection mechanisms (e.g., roulette wheel, tournament selection).  
-  - **Crossover** – Combine parents to produce new offspring (single-point, two-point, or uniform crossover).  
-  - **Mutation** – Introduce random modifications to preserve genetic diversity and avoid premature convergence.  
-- **Parameter Tuning**: Study how parameters such as population size, crossover probability, and mutation rate influence the GA’s convergence and solution quality.  
-- **Stopping Criteria**: Define when the algorithm should terminate (fixed iterations, fitness threshold, or stagnation).  
-- **Comparative Analysis**: Compare the performance of GA with classical methods studied in earlier projects (Steepest Descent, Newton, Levenberg–Marquardt).  
+  - **Selection** – roulette wheel and tournament selection.  
+  - **Crossover** – combining road-flow distributions between parent solutions.  
+  - **Mutation** – introducing small random changes to flows for exploration.  
+- **Parameter tuning**: analyze the impact of population size, mutation rate, and crossover probability.  
+- **Comparative study**: evaluate GA performance against classical methods from earlier projects (Steepest Descent, Newton, Levenberg–Marquardt).  
 
 #### 📊 Results & Observations  
-- The GA successfully solved optimization problems where deterministic methods often became trapped in local minima.  
-- A **balanced mutation rate** was essential:  
-  - Too low → lack of diversity, risk of premature convergence.  
-  - Too high → random search behavior, slow convergence.  
-- The **crossover probability** strongly affected exploitation of good candidate solutions.  
-- Larger populations generally improved robustness but increased computational cost.  
-- Compared to gradient-based methods, the GA required more iterations but achieved **better global optima** in multi-modal landscapes.  
-- The results highlighted the **strength of evolutionary computation** for global optimization, especially when problem structure is complex or derivative information is unavailable.  
+- The **GA successfully minimized total travel time** across the network while respecting road capacities and flow conservation.  
+- **Mutation rate** was crucial:  
+  - Too low → premature convergence to suboptimal solutions.  
+  - Too high → excessive randomness, poor convergence.  
+- **Crossover probability** balanced exploration vs. exploitation; optimal values helped combine partial solutions efficiently.  
+- Larger populations improved solution quality but increased runtime.  
+- Compared to deterministic methods, GA required more iterations but avoided local minima and achieved **better global traffic flow distribution**.  
+- The project demonstrated the **practical advantage of evolutionary computation** for large-scale, non-convex optimization problems like traffic networks.  
 
 ---
 
