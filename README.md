@@ -18,7 +18,7 @@ Each method was applied to three different test functions, analyzing:
 - Interval reduction across iterations.  
 - Comparative efficiency of the methods.  
 
-**Results & Observations:**  
+#### 📊 Results & Observations  
 - The **Golden Section** and **Fibonacci** methods were the most efficient in terms of convergence speed and robustness.  
 - The **Dichotomy method** was simpler but required more function evaluations due to repeated interval splitting.  
 - When derivative information was available, the **Dichotomy with Derivatives** method accelerated convergence, but its performance depended heavily on numerical stability of derivative estimation.  
@@ -37,7 +37,7 @@ Step-size selection strategies explored:
 - Line search with **Golden Section**.  
 - **Armijo Rule**.  
 
-**Results & Observations:**  
+#### 📊 Results & Observations  
 - **Steepest Descent** converged slowly and was highly sensitive to the choice of step size; Golden Section and Armijo improved stability compared to a fixed step.  
 - **Newton’s Method** provided fast convergence when the Hessian was well-conditioned, but failed or diverged when the Hessian was ill-conditioned.  
 - **Levenberg–Marquardt** successfully combined the speed of Newton with the stability of gradient descent, especially in difficult regions.  
@@ -52,7 +52,7 @@ In-depth analysis of the **convergence properties of the Steepest Descent method
 - Mathematical justification for the step-size bounds.  
 - Empirical validation through simulations with different initial conditions.  
 
-**Results & Observations:**  
+#### 📊 Results & Observations   
 - For convergence, the step size **γk** must remain within strict theoretical bounds depending on the Lipschitz constant of the gradient.  
 - Too small a step size resulted in extremely slow convergence, while too large a step size caused divergence.  
 - Experimental results matched the theoretical predictions closely: oscillations and divergence appeared exactly when γk exceeded the upper bound.  
@@ -63,7 +63,6 @@ In-depth analysis of the **convergence properties of the Steepest Descent method
 ### 🧬 **Project 4 – Genetic Algorithms (Final Project)**  
 The final project focused on **evolutionary optimization techniques**, specifically the design and implementation of a **Genetic Algorithm (GA)** to solve challenging optimization problems.  
 
-#### 📌 Tasks  
 - **Problem Definition**: Apply GA to a non-trivial optimization problem (function minimization or classification), where classical deterministic methods may fail due to non-convexity or multiple local minima.  
 - **Chromosome Encoding**: Decide how solutions are represented (binary, real-valued, or custom structures depending on the problem).  
 - **Population Initialization**: Generate diverse initial candidate solutions to ensure sufficient exploration of the search space.  
