@@ -86,9 +86,11 @@ $$
   - The total input flow for the network is fixed at \(V = 100\) vehicles/minute.  
 
 - **Objective**:  
-  $$
-  \text{Minimize} \quad T_\text{total} = \sum_{i=1}^{n} T_i(x_i)
-  $$ 
+
+$$
+\text{Minimize} \quad T_\text{total} = \sum_{i=1}^{n} T_i(x_i)
+$$
+  
   subject to flow conservation and capacity constraints.  
 
 #### 📌 Tasks  
