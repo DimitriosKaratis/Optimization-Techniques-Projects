@@ -68,33 +68,32 @@ The final project applied **evolutionary optimization techniques** to a real-wor
 #### 🚦 Problem Description  
 - The network is modeled as a directed graph where **nodes** are intersections and **edges** are roads.  
 - Each road *i* has:  
-  - **Baseline travel time**: *ti* (minutes, under negligible traffic).  
-  - **Capacity**: *ci* (vehicles per minute, maximum flow).  
-  - **Flow variable**: *xi* (vehicles per minute using that road).  
-  - **Congestion factor**: *ai*, a constant depending on road type.  
-- The travel time function for road *i* is:  
+  - **Baseline travel time**: *t₁, t₂, …* (minutes, under negligible traffic).  
+  - **Capacity**: *c₁, c₂, …* (vehicles per minute, maximum flow).  
+  - **Flow variable**: *x₁, x₂, …* (vehicles per minute on road *i*).  
+  - **Congestion factor**: *a₁, a₂, …*, a constant depending on road type.  
 
-  \[
-  T_i(x_i) = t_i + \frac{a_i x_i}{1 - \frac{x_i}{c_i}} \quad [\text{minutes}]
-  \]
+$$
+T_i(x_i) = t_i + \frac{a_i x_i}{1 - \frac{x_i}{c_i}} \quad \text{[minutes]}
+$$
 
 - Properties:  
-  - As \(x_i \to 0\), \(T_i(x_i) \to t_i\) (light traffic = baseline time).  
-  - As \(x_i \to c_i\), \(T_i(x_i) \to +\infty\) (congestion → gridlock).  
+  - As $x_i \to 0$, $T_i(x_i) \to t_i$ (light traffic).  
+  - As $x_i \to c_i$, $T_i(x_i) \to +\infty$ (congestion → gridlock). 
 
 - **Constraints**:  
   - The total incoming flow at each intersection equals the total outgoing flow (no accumulation or deficits).  
   - The total input flow for the network is fixed at \(V = 100\) vehicles/minute.  
 
 - **Objective**:  
-  \[
-  \text{Minimize } T_{\text{total}} = \sum_{i=1}^n T_i(x_i)
-  \]  
+  $$
+  \text{Minimize} \quad T_\text{total} = \sum_{i=1}^{n} T_i(x_i)
+  $$ 
   subject to flow conservation and capacity constraints.  
 
 #### 📌 Tasks  
 - **Mathematical formulation** of the traffic optimization problem.  
-- **Chromosome representation** of road flows \((x_1, x_2, \dots, x_n)\).  
+- **Chromosome representation** of road flows $(x_1, x_2, \dots, x_n)$.  
 - **Population initialization** ensuring feasibility (flows respect conservation laws and capacities).  
 - **Genetic Operators**:  
   - **Selection** – roulette wheel and tournament selection.  
