@@ -6,7 +6,7 @@ The work was developed as part of the *Optimization Techniques* course at the **
 
 ---
 
-### 🔹 **Project 1 – Unimodal Function Optimization**
+### 🔹 **Project 1 – Optimization of Single-Variable Functions**
 Implementation and comparison of classical 1D optimization algorithms:
 - **Dichotomy Method**  
 - **Golden Section Method**  
