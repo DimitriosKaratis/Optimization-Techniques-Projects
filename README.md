@@ -92,6 +92,7 @@ $$
 $$
   
   subject to flow conservation and capacity constraints.  
+![My Imagee](Final_Project/report/network1.png)
 
 #### 📌 Tasks  
 - **Mathematical formulation** of the traffic optimization problem.  
