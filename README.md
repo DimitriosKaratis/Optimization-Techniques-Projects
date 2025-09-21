@@ -60,19 +60,30 @@ In-depth analysis of the **convergence properties of the Steepest Descent method
 
 ---
 
-### 🧬 **Project 4 – Genetic Algorithms (Final Project)**
-Application of **Genetic Algorithms (GA)** to complex optimization problems:  
-- Chromosome representation and initialization strategies.  
-- Selection, crossover, and mutation operators.  
-- Convergence analysis and parameter tuning (population size, mutation rate, crossover probability).  
-- Comparison of GA performance with classical methods from previous projects.  
+### 🧬 **Project 4 – Genetic Algorithms (Final Project)**  
+The final project focused on **evolutionary optimization techniques**, specifically the design and implementation of a **Genetic Algorithm (GA)** to solve challenging optimization problems.  
 
-**Results & Observations:**  
-- GAs were effective in solving non-convex and multimodal problems where deterministic methods failed or got trapped in local minima.  
-- Proper tuning of **population size** and **mutation rate** was crucial: too low mutation reduced exploration, while too high mutation prevented convergence.  
-- Crossover probability strongly influenced the algorithm’s ability to exploit good solutions.  
-- Compared to classical methods (Steepest Descent, Newton, etc.), GAs required more iterations but achieved **better global solutions** in complex landscapes.  
-- The results confirmed the strength of **evolutionary methods in global optimization**, despite their slower convergence compared to deterministic approaches.  
+#### 📌 Tasks  
+- **Problem Definition**: Apply GA to a non-trivial optimization problem (function minimization or classification), where classical deterministic methods may fail due to non-convexity or multiple local minima.  
+- **Chromosome Encoding**: Decide how solutions are represented (binary, real-valued, or custom structures depending on the problem).  
+- **Population Initialization**: Generate diverse initial candidate solutions to ensure sufficient exploration of the search space.  
+- **Genetic Operators**:  
+  - **Selection** – Implement parent selection mechanisms (e.g., roulette wheel, tournament selection).  
+  - **Crossover** – Combine parents to produce new offspring (single-point, two-point, or uniform crossover).  
+  - **Mutation** – Introduce random modifications to preserve genetic diversity and avoid premature convergence.  
+- **Parameter Tuning**: Study how parameters such as population size, crossover probability, and mutation rate influence the GA’s convergence and solution quality.  
+- **Stopping Criteria**: Define when the algorithm should terminate (fixed iterations, fitness threshold, or stagnation).  
+- **Comparative Analysis**: Compare the performance of GA with classical methods studied in earlier projects (Steepest Descent, Newton, Levenberg–Marquardt).  
+
+#### 📊 Results & Observations  
+- The GA successfully solved optimization problems where deterministic methods often became trapped in local minima.  
+- A **balanced mutation rate** was essential:  
+  - Too low → lack of diversity, risk of premature convergence.  
+  - Too high → random search behavior, slow convergence.  
+- The **crossover probability** strongly affected exploitation of good candidate solutions.  
+- Larger populations generally improved robustness but increased computational cost.  
+- Compared to gradient-based methods, the GA required more iterations but achieved **better global optima** in multi-modal landscapes.  
+- The results highlighted the **strength of evolutionary computation** for global optimization, especially when problem structure is complex or derivative information is unavailable.  
 
 ---
 
