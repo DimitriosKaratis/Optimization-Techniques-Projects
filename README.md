@@ -26,7 +26,7 @@ Each method was applied to three different test functions, analyzing:
 
 ---
 
-### 🔷 **Project 2 – Multivariable Optimization Methods**
+### 🔹 **Project 2 – Multivariable Optimization Methods**
 Study of optimization in 2D functions using different algorithms and step-size strategies:  
 - **Steepest Descent Method**  
 - **Newton’s Method**  
@@ -45,7 +45,7 @@ Step-size selection strategies explored:
 
 ---
 
-### ⚡ **Project 3 – Convergence of Gradient Methods**
+### 🔹 **Project 3 – Convergence of Gradient Methods**
 In-depth analysis of the **convergence properties of the Steepest Descent method**, focusing on:  
 - The influence of step size (γk).  
 - Conditions for convergence and divergence.  
@@ -80,13 +80,3 @@ Application of **Genetic Algorithms (GA)** to complex optimization problems:
 - **MATLAB** was used for all implementations and simulations.  
 - Detailed comments and explanations are provided in each `.m` file.  
 - Reports are written in Greek, while the README provides an English overview.  
-
----
-
-## 📚 Learning Outcomes
-Through these four projects, the following skills were developed:
-- Understanding of classical and modern optimization techniques.  
-- Practical experience in MATLAB for numerical optimization.  
-- Critical evaluation of convergence speed, robustness, and efficiency of algorithms.  
-- Application of Genetic Algorithms to real-world inspired optimization problems.  
-- Ability to compare theoretical guarantees with empirical performance across different classes of algorithms.  
