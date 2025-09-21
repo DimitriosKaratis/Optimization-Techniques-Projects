@@ -92,7 +92,7 @@ $$
 $$
   
   subject to flow conservation and capacity constraints.  
-![My Imagee](Final_Project/report/network1.png)
+
 <img src="Final_Project/report/network1.png" alt="Traffic Network" width="600" height="auto"/>
 
 
