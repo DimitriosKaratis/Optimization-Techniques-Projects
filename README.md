@@ -4,7 +4,7 @@ This repository contains the implementation of multiple projects in **Optimizati
 
 The work was developed as part of the *Optimization Techniques* course at the **Department of Electrical and Computer Engineering, Aristotle University of Thessaloniki**.  
 
----
+--- 
 
 ### 🔹 **Project 1 – Optimization of Single-Variable Functions**
 Implementation and comparison of classical 1D optimization algorithms:
